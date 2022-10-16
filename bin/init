@@ -1,15 +1,15 @@
 #!/bin/bash
 
-CONF=${DATA}/vertcoin.conf
+CONF=${DATA}/jagoancoin.conf
 
 if [ ! -e "${CONF}" ]; then
   echo "disablewallet=1
 printtoconsole=1
-port=5889
-rpcport=5888
+port=17899
+rpcport=17898
 rpcallowip=::/0
 rpcuser=rpc
 rpcpassword=`dd if=/dev/urandom bs=18 count=1 2>/dev/null | base64`" > "${CONF}"
 fi
 
-exec vertcoind -datadir=${DATA} -conf=${CONF} "$@"
+exec jagoancoind -datadir=${DATA} -conf=${CONF} "$@"
